@@ -1,0 +1,75 @@
+---
+layout: home
+title: Blog
+permalink: /blog/
+---
+
+
+<div class="wideget-content alignwide is-stacked-on-mobile">
+    <div class="widget widget_archive">
+        <h2 class="widget-title subheading heading-size-3">The Daily Something</h2>
+        <ul>
+            {% for post in site.tags.dailysomething %}
+            <li>
+                <h3 class="widget-title subheading heading-size-5">
+                    <a href="{{ post.url | relative_url }}">{{post.title}}</a>
+                </h3>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true">
+</hr>
+
+<div class="wideget-content alignwide is-stacked-on-mobile">
+    <div class="widget widget_archive">
+        <h2 class="widget-title subheading heading-size-3">Miscellaneous</h2>
+        <ul>
+            {% for post in site.tags.miscellaneous %}
+            <li>
+                <h3 class="widget-title subheading heading-size-5">
+                    <a href="{{ post.url | relative_url }}">{{post.title}}</a>
+                </h3>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true">
+</hr>
+
+<div class="wideget-content alignwide is-stacked-on-mobile">
+    <div class="widget widget_archive">
+        <h2 class="widget-title subheading heading-size-3">Finance</h2>
+        <ul>
+            {% for post in site.tags.finance %}
+            <li>
+                <h3 class="widget-title subheading heading-size-5">
+                    <a href="{{ post.url | relative_url }}">{{post.title}}</a>
+                </h3>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true">
+</hr>
+
+<div class="wideget-content alignwide is-stacked-on-mobile">
+    <div class="widget widget_archive">
+        <h2 class="widget-title subheading heading-size-3">Programming</h2>
+        <ul>
+            {% for post in site.tags.programming %}
+            <li>
+                <h3 class="widget-title subheading heading-size-5">
+                    <a href="{{ post.url | relative_url }}">{{post.title}}</a>
+                </h3>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

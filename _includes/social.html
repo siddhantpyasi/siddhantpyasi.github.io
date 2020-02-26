@@ -1,0 +1,20 @@
+{%- assign social = site.social_links -%}
+<ul class="primary-menu reset-list-style">
+    <div class="section-inner medium">
+        {%- if social.linkedin -%}
+        <li id="menu-item-1732" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1732">
+            <a href="https://linkedin.com/in/{{ social.linkedin | cgi_escape | escape }}" title="{{ social.linkedin | escape }}">LinkedIn</a>
+        </li>
+        {%- endif -%}
+        {%- if social.twitter -%}
+        <li id="menu-item-1732" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1732">
+            <a href="https://twitter.com/{{ social.twitter | cgi_escape | escape }}" title="{{ social.twitter | escape }}">Twitter</a>
+        </li>
+        {%- endif -%}
+        {%- if social.github -%}
+        <li id="menu-item-1732" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1732">
+            <a href="https://github.com/{{ social.github | cgi_escape | escape }}" title="{{ social.github | escape }}">Github</a>
+        </li>
+        {%- endif -%}
+    </div>
+</ul>
