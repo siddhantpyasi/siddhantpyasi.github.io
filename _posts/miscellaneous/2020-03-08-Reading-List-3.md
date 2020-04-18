@@ -15,7 +15,7 @@ If you're a frequent watcher of Leno/Letterman/Conan clips on YouTube, you'll al
 
 
 #### [James Crabtree - The Billionaire Raj](https://smile.amazon.com/Billionaire-Raj-Journey-Through-Indias/dp/1524760064)  
-The more I read, the more I like nuance. And this is an incredibly nuanced book describing India's version of the [Gilded Age](https://en.m.wikipedia.org/wiki/Gilded_Age). It has so many great observations about India, that it's hard to list them all down. An especially good one is this one, about India's governing machine  
+The more I read, the more I like nuance. And this is an incredibly nuanced book describing India's version of the [Gilded Age](https://en.m.wikipedia.org/wiki/Gilded_Age). It has so many great observations about India, that it's hard to list them all down. An especially good one is this, about India's governing machine  
 > Inside the machine, it was amateurism rather than authoritarianism that appeared to be the greater threat to India’s future.  
 
 How true! India's governing structure can be amazingly efficient when it has to be, and amazingly inefficient when it doesn't want to step up (or rather, inefficient because amateurs are in charge and don't know _how_ to step up).
