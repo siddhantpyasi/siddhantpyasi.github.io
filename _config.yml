@@ -36,6 +36,9 @@ markdown: kramdown
 # Build settings
 theme: minima
 
+permalink: pretty
+permalink: /:title
+
 google_analytics: UA-27466062-2
 # Exclude from processing.
 # The following items will not be processed, by default.
