@@ -4,7 +4,15 @@ layout: default
 <article class="post-173 page type-page status-publish hentry">
     <header class="entry-header has-text-align-center header-footer-group">
         <div class="entry-header-inner section-inner medium">
-            <h2 class="entry-title">{{  page.title | escape }}</h2>
+            {% if page.tags[0] == "dailysomething" %}
+            {% assign trial = page.title %}
+            {% assign bits = trial | split: '-' %}
+            {% assign writethis = bits[1] %}
+                        <img src="/assets/img/TDS-black.png">
+                <h3 class="entry-title">{{  writethis | escape  }}</h3>
+            {% else %}
+                <h3 class="entry-title">{{  page.title | escape }}</h3>
+            {% endif %}
             <div class="post-meta-wrapper post-meta-single post-meta-single-top">
 
                 <ul class="post-meta">
