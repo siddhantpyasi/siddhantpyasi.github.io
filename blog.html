@@ -1,0 +1,26 @@
+---
+layout: default
+permalink: /blog/
+---
+        
+        <h2>The Daily Something</h2>
+        <p>For a brief period in my life, I was bored (and driven) enough to write a newsletter. I was blessed with a doughty bunch of people who wanted to read it (at it's peak, I had some 40 subscribers), which was a large enough number to keep me going irregularly for 2-ish years. All the editions of that newsletter are preserved here for posterity's sake.</p>
+        {% for post in site.tags.dailysomething %}
+            <article>
+                {% assign num = forloop.rindex %}
+                {% assign z = num | append: ' - ' | append: post.title %}
+                <h3><a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none">{{ z }}</a></h3>
+                <span class="mini-note">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </article>
+        {% endfor %}
+        
+        <br></br>
+
+        <h2>Miscellaneous</h2>
+        <p>All other random writing.</p>
+        {% for post in site.tags.miscellaneous %}
+            <article>
+                <h3><a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none">{{ post.title }}</a></h3>
+                <span class="mini-note">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </article>
+        {% endfor %}
