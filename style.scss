@@ -169,7 +169,7 @@ table {
     $DEFAULT CLASSES
 /**************************************/
 /*p*/.subtitle {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-style: italic;
 }
 
@@ -189,14 +189,18 @@ table {
 /*span*/.marginnote,
 /*span*/.sidenote,
 figcaption {
+    float: right;
+    clear: right;
     font-size: 70%;
     left: calc(100% + 4rem);
     line-height: 1.3rem;
     max-width: 400px;
-    padding-top: 1rem;
     position: absolute;
-    top: 0;
     width: 50%;
+}
+
+/*span*/.successive {
+    margin-top: 30px;
 }
 
 /*span*/.sidenote {
@@ -207,6 +211,7 @@ figcaption {
         position: relative;
         top: -0.5rem;
         vertical-align: baseline;
+        clear: right;
     }
 }
 
