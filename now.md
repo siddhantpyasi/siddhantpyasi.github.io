@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Now
-permalink: /now
+permalink: /now/
 ---
 
 This page is inspired by Derek Sivers' [Now Project](https://nownownow.com/about).

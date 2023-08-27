@@ -7,7 +7,9 @@ permalink: /blog/
         <p>The plan with these is to write 2-4 every quarter, to try and list out notable experiences of mine.</p>
         {% for post in site.tags.quarterlydespatch %}
             <article>
-                <h3><a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none">{{ post.title }}</a></h3>
+                {% assign num = forloop.rindex %}
+                {% assign z = num | append: ' - ' | append: post.title %}
+                <h3><a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none">{{ z }}</a></h3>
                 <span class="mini-note">{{ post.date | date: "%b %-d, %Y" }}</span>
             </article>
         {% endfor %}
