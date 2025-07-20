@@ -1,0 +1,14 @@
+[project]
+name = "Siddhant Pyasi's website"
+version = "1.0"
+description = "My personal website"
+authors = [
+    { name = "Siddhant Pyasi", email = "siddhantpyasi@yahoo.co.in" },
+]
+requires-python = ">=3.13"
+
+[project]
+dependencies = [
+    "python>=3.13",
+    "pandas>=9.6.15",
+]

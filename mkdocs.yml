@@ -1,0 +1,67 @@
+site_name: Siddhant Pyasi
+site_url: https://siddhantpyasi.com
+theme:
+  name: material
+  font:
+    text: EB Garamond
+  palette:
+    scheme: slate
+  features:
+    - navigation.tabs
+    - navigation.prune
+    - navigation.expand
+    - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - nvaigation.sections
+    - search.highlight
+    - search.share
+    - content.code.copy
+  icon:
+    annotation: material/plus-circle
+  language: en
+  favicon: assets/favicon/favicon.ico
+  custom_dir: overrides
+
+
+extra:
+  analytics:
+    provider: google
+#    property: G-XXXXXXXXXX
+
+plugins:
+  - search
+  - tags
+  - blog:
+      blog_dir: blog
+      post_date_format: yyyy-MM-dd   # "yyyy-MM-dd"
+      post_url_date_format: yyyy/MM/dd
+      post_url_format: "{date}/{slug}"
+      pagination: false
+      draft: true
+      draft_on_serve: false
+      draft_if_future_date: true
+
+nav:
+  - Home: index.md
+  - Blog: blog/index.md
+  - Now: now/index.md
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - pymdownx.blocks.caption
+  - admonition
+  - codehilite
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: Copyright &copy; 2017 - 2025 Siddhant Pyasi. Views expressed here are strictly personal, and almost always change over time.
+
+hooks:
+  - word_count.py

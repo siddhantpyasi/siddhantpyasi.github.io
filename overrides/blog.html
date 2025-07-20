@@ -1,0 +1,93 @@
+<!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+{% extends "main.html" %}
+
+<!-- Reusable macro for rendering post categories. This macro takes a category name, and renders all posts in
+that category from newest to oldest. It also numbers the posts accordingly - so if there are 20 posts, the latest post
+is numbered 20, next 19, etc -->
+{% macro render_category(category_name, posts_by_category, show_numbers=true) %}
+{% if category_name in posts_by_category %}
+    {% set total_posts = posts_by_category[category_name] | length %}
+    {% for post in posts_by_category[category_name] %}
+    {% if show_numbers %}
+    {% set num = total_posts - loop.index0 %}
+{% endif %}
+<!-- macro end -->
+<article style="margin-bottom: 2rem;">
+    <h3 style="margin-bottom: 0.25rem;">
+        <a href="{{ post.abs_url }}"
+           style="text-decoration: none; color: inherit; font-family: Hanken Grotesk, Calibri Bold, sans-serif;">
+            {% if show_numbers %}{{ num }} - {% endif %}{{ post.post.title }}
+        </a>
+    </h3>
+    <div style="font-style: italic; color: #888; font-size: 0.9em;">
+        {{ post.config.date.created.strftime("%b %-d, %Y") }} | {{ post.meta.word_count }} words
+    </div>
+</article>
+{% endfor %}
+{% endif %}
+{% endmacro %}
+
+<!-- Page content -->
+{% block container %}
+<div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+
+        <!-- Header -->
+        <header class="md-typeset">
+            {{ page.content }}
+        </header>
+
+        <!-- Group posts by category -->
+        {% set posts_by_category = {} %}
+
+        {% for post in posts %}
+            {% if not post.meta.draft %}
+                {% set post_categories = post.categories or [] %}
+                {% if not post_categories %}
+                    {% set post_categories = ['miscellaneous'] %}
+                {% endif %}
+            {% endif %}
+
+            {% for category in post_categories %}
+                {% set category_name = category.name if category.name else category|string %}
+                {% if category_name not in posts_by_category %}
+                    {% set _ = posts_by_category.update({category_name: []}) %}
+                {% endif %}
+                {% set _ = posts_by_category[category_name].append(post) %}
+            {% endfor %}
+        {% endfor %}
+
+        <div class="md-typeset">
+            <!-- Quarterly Despatches -->
+            <h2>Quarterly Despatches</h2>
+            <p>The plan with these is to write 2-4 every quarter, to try and list out notable experiences of mine.</p>
+            {{ render_category('quarterlydespatch', posts_by_category, show_numbers=false) }}
+
+            <!-- Miscellaneous -->
+            <h2>Miscellaneous</h2>
+            <p>All other random writing.</p>
+            {{ render_category('miscellaneous', posts_by_category, show_numbers=false) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
